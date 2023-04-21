@@ -1,85 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Page Loader Example</title>
-	<style>
-		#loader-container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: #fff;
-			z-index: 9999;
-		}
+  <head>
+    <title>Page Loader Example</title>
+    <style>
+      #loader {
+        width: 100%;
+        height: 5px;
+        background-color: #ddd;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+      }
 
-		#loader-progress {
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
-			width: 100%;
-			height: 30px;
-			margin-bottom: 10px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			overflow: hidden;
-		}
+      #progress {
+        height: 100%;
+        background-color: #4caf50;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
 
-		#loader-fill {
-			height: 100%;
-			background-color: #4CAF50;
-			transform-origin: left center;
-			transform: scaleX(0);
-			transition: transform 0.5s ease;
-		}
+      #status {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <div id="progress"></div>
+    </div>
+    <div id="status">Loading... 0%</div>
+    <script>
+	  var progressBar = document.getElementById("progress");
+var statusText = document.getElementById("status");
 
-		#loader-text {
-			font-size: 18px;
-			font-weight: bold;
-			text-align: center;
-		}
-	</style>
-</head>
-<body>
-	<div id="loader-container">
-		<div id="loader-progress">
-			<div id="loader-fill"></div>
-		</div>
-		<div id="loader-text">Loading...</div>
-	</div>
-
-	<!-- Your page content goes here -->
-	<h1>Welcome to my website</h1>
-	<p>This is some sample content.</p>
-
-	<!-- JavaScript code -->
-	<script>
-	const loaderFill = document.getElementById('loader-fill');
-const loaderText = document.getElementById('loader-text');
-
-let progress = 0;
-const intervalId = setInterval(() => {
-  progress += 25;
-  loaderFill.style.transform = `scaleX(${progress / 100})`;
-
-  if (progress === 25) {
-    loaderText.textContent = 'Loading... 25%';
-  } else if (progress === 50) {
-    loaderText.textContent = 'Loading... 50%';
-  } else if (progress === 75) {
-    loaderText.textContent = 'Loading... 75%';
-  } else if (progress === 100) {
-    clearInterval(intervalId);
-    loaderText.textContent = 'Loading complete. Redirecting...';
-    setTimeout(() => {
-      window.location.href = 'https://www.example.com';
-    }, 2000); // Redirect after 2 seconds
+var progress = 0;
+var interval = setInterval(function() {
+  if (progress >= 100) {
+    clearInterval(interval);
+    window.location.href = "http://example.com";
+  } else if (progress >= 75) {
+    statusText.innerHTML = "Almost there... " + progress + "%";
+    progress += 25;
+    progressBar.style.width = progress + "%";
+  } else if (progress >= 50) {
+    statusText.innerHTML = "Halfway there... " + progress + "%";
+    progress += 25;
+    progressBar.style.width = progress + "%";
+  } else if (progress >= 25) {
+    statusText.innerHTML = "A quarter done... " + progress + "%";
+    progress += 25;
+    progressBar.style.width = progress + "%";
+  } else {
+    statusText.innerHTML = "Loading... " + progress + "%";
+    progress += 25;
+    progressBar.style.width = progress + "%";
   }
-}, 1000); // Update progress every second
-</script>
-</body>
+}, 1000);
+
+	  </script>
+  </body>
 </html>
