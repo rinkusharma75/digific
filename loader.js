@@ -31,7 +31,7 @@ function progressLoader() {
 
 	if (percent >= 100) {
 		percent = 100;
-		progress.textContent = `Loading... ${percent}%`;
+		progress.textContent = `Redirecting you to the offer page...`;
 		progressBar.style.width = `${percent}%`;
 		progressBar.style.backgroundColor = "#00ff00"; // Change the progress bar color to green at 100%
 		setTimeout(() => { window.location.href = "https://www.example.com"; }, 500); // Redirect to a different URL upon completing 100%
@@ -51,7 +51,7 @@ function progressLoader() {
 	
 	else if (percent === 25) {
 		progressBar.style.backgroundColor = "#00ff00"; // Change the progress bar color to green for values greater than 75%
-		progress.textContent = `Checking if you qualify for this special offer. ${percent}%`;
+		progress.textContent = `Checking if you qualify for this special offer.`;
 	}
 
 	setTimeout(progressLoader, 1000); // Call the function again every 1 second until it reaches 100%
