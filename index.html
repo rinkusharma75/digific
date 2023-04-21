@@ -37,10 +37,23 @@
 			color: #fff;
 			margin-bottom: 20px;
 		}
+		.brand {
+    			animation: rotation 1s infinite linear;
+}
+
+		@keyframes rotation {
+		    from {
+		        transform: rotate(0deg);
+		    }
+		    to {
+		        transform: rotate(360deg);
+		    }
+}
 	</style>
 </head>
 <body>
 	<div class="loader-container">
+		<div class="brand"><img src="images/logo-icon.png"></div>
 		<div class="progress"></div>
 		<div class="progress-bar-container">
 			<div class="progress-bar"></div>
