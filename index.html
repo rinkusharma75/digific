@@ -27,62 +27,13 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
-      
-      #circle {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: #ddd;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-      }
     </style>
   </head>
   <body>
     <div id="loader">
       <div id="progress"></div>
     </div>
-    <div id="circle">0%</div>
-    <script>
-	  var progressBar = document.getElementById("progress");
-var statusText = document.getElementById("status");
-var circleText = document.getElementById("circle");
-
-var progress = 0;
-var interval = setInterval(function() {
-  if (progress >= 100) {
-    clearInterval(interval);
-    window.location.href = "http://example.com";
-  } else if (progress >= 75) {
-    statusText.innerHTML = "Almost there... " + progress + "%";
-    circleText.innerHTML = progress + "%";
-    progress += 25;
-    progressBar.style.width = progress + "%";
-  } else if (progress >= 50) {
-    statusText.innerHTML = "Halfway there... " + progress + "%";
-    circleText.innerHTML = progress + "%";
-    progress += 25;
-    progressBar.style.width = progress + "%";
-  } else if (progress >= 25) {
-    statusText.innerHTML = "A quarter done... " + progress + "%";
-    circleText.innerHTML = progress + "%";
-    progress += 25;
-    progressBar.style.width = progress + "%";
-  } else {
-    statusText.innerHTML = "Loading... " + progress + "%";
-    circleText.innerHTML = progress + "%";
-    progress += 25;
-    progressBar.style.width = progress + "%";
-  }
-  circleText.style.backgroundColor = "#4caf50"; // Set circle background color to green
-}, 1000);
-</script>
+    <div id="status">Loading... 0%</div>
+    <script src="loader.js"></script>
   </body>
 </html>
