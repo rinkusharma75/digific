@@ -39,12 +39,19 @@ function progressLoader() {
 	}
 
 	progressBar.style.width = `${percent}%`;
-	progress.textContent = `Loading... ${percent}%`;
+	progress.textContent = `Stocks Available!`;
 
 	if (percent === 75) {
 		progressBar.style.backgroundColor = "#f39c12"; // Change the progress bar color to orange at 75%
-	} else if (percent > 75) {
+		progress.textContent = `Checking if we have enough inventory to support your order.`;
+	} else if (percent === 50) {
 		progressBar.style.backgroundColor = "#00ff00"; // Change the progress bar color to green for values greater than 75%
+		progress.textContent = `Wow! Congrats! You qualify for this offer.`;
+	}
+	
+	else if (percent === 25) {
+		progressBar.style.backgroundColor = "#00ff00"; // Change the progress bar color to green for values greater than 75%
+		progress.textContent = `Checking if you qualify for this special offer. ${percent}%`;
 	}
 
 	setTimeout(progressLoader, 1000); // Call the function again every 1 second until it reaches 100%
