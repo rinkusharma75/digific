@@ -38,28 +38,31 @@
 			color: #fff;
 			margin-bottom: 20px;
 		}
-		.brand {
-    			animation: rotation 4s infinite linear;
-		}
-		
-/* 		.brand img {
-			width: 10%;
-			display: block;
-		} */
+		.rotate {
+  animation: rotation 2s;
+}
 
-		@keyframes rotation {
-		    from {
-		        transform: rotate(0deg);
-		    }
-		    to {
-		        transform: rotate(360deg);
-		    }
+.linear {
+  animation-timing-function: linear;
+}
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 	</style>
 </head>
 <body>
 	<div class="loader-container">
-		<div class="brand"><img src="images/logo-icon.png" width=30%></div>
+		<div><img src="images/logo-icon.png" class="rotate linear infinite" width="150" height="150"></div>
 		<div class="progress"></div>
 		<div class="progress-bar-container">
 			<div class="progress-bar"></div>
