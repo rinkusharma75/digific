@@ -15,12 +15,18 @@
 		.progress-bar-container {
 			width: 40%;
 			height: 20px;
-			border: 1px solid #fff;
+			
 			border-radius: 10px;
 			overflow: hidden;
 			margin-bottom: 10px;
 			position: relative;
 		}
+.load-bdr {
+    border: 1px solid #fff;
+   transition-delay: 1s ;
+   transition-timing-function: ease-in-out;
+   
+}
 		
 		.progress-bar {
 			width: 0%;
