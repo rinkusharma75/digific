@@ -5,7 +5,7 @@
 // function progressLoader() {
 // 	percent += 25;
 
-// 	if (percent >= 2000) {
+// 	if (percent >= 100) {
 // 		percent = 100;
 // 		progress.textContent = `Loading... ${percent}%`;
 // 		progressBar.style.width = `${percent}%`;
@@ -29,7 +29,7 @@ let percent = 0;
 function progressLoader() {
 	percent += 25;
 
-	if (percent >= 100) {
+	if (percent >= 3000) {
 		percent = 100;
 		progress.textContent = `Redirecting you to the offer page...`;
 		progressBar.style.width = `${percent}%`;
