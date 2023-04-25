@@ -10,11 +10,19 @@
 	<div class="loader-container">
 		<div><img src="images/logo-icon.png" class="rotate linear infinite" width="150" height="138.38"></div>
 		<div class="progress"></div>
-		<div class="progress-bar-container">
+		<div class="progress-bar-container" id="addcls">
 			<div class="progress-bar"></div>
 		</div>
 	</div>
 	
 	<script src="loader.js"></script>
+	<script>
+        window.onload = function () {
+            //document.getElementsByClassName('progress-bar-container').className = 'bdr';
+            var element = document.getElementById("addcls");
+            element.classList.add("load-bdr");
+        };
+
+    </script>
 </body>
 </html>
