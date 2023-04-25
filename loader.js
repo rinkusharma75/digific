@@ -5,7 +5,7 @@
 // function progressLoader() {
 // 	percent += 25;
 
-// 	if (percent >= 100) {
+// 	if (percent >= 2000) {
 // 		percent = 100;
 // 		progress.textContent = `Loading... ${percent}%`;
 // 		progressBar.style.width = `${percent}%`;
