@@ -1,76 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Page Loader</title>
-	<style>
-		body {
-			background-image: url('images/RF3HKQFRZQI6RC2TKAIWO2HETE.jpg');
-			background-repeat: no-repeat;
-			background-size: cover;
-			font-family: lato;
-		}
-		.loader-container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			background-color: #000000c9;
-		}
-		.progress-bar-container {
-			width: 40%;
-			height: 20px;
-			border: 1px solid #fff;
-			border-radius: 10px;
-			overflow: hidden;
-			margin-bottom: 10px;
-			position: relative;
-		}
-		.progress-bar {
-			width: 0%;
-			height: 100%;
-			background-color: #3498db;
-			transition: width 0.5s ease-in-out;
-		}
-		.progress {
-			font-size: 20px;
-/* 			font-weight: 200; */
-			color: #fff;
-			margin-bottom: 20px;
-		}
-		.rotate {
-			  animation: rotation 4s;
-		}
-
-		.linear {
-			  animation-timing-function: linear;
-		}
-
-		.infinite {
-			  animation-iteration-count: infinite;
-		}
-
-		@keyframes rotation {
-			  from {
-			    transform: rotate(0deg);
-			  }
-			  to {
-			    transform: rotate(359deg);
-			  }
-		}
-		
-		@media (max-width: 700px) {
-			.progress-bar-container {
-			width: 80%;
-			height: 20px;
-			border: 1px solid #fff;
-			border-radius: 10px;
-			overflow: hidden;
-			margin-bottom: 10px;
-			position: relative;
-		}
-		}
-	</style>
+<link href="style.css" rel="stylesheet" />
+<title>Page Loader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="style.css" rel="stylesheet" />	
 </head>
 <body>
 	<div class="loader-container">
