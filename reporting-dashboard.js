@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Load Google Sheets data
-  axios.get('https://sheets.googleapis.com/v4/spreadsheets/2PACX-1vQ-Dx0aj1hLBnKC5KLBjUqPQo8VsqXhDeR-eExgNY2qHTrQC1qslWTX0pT0Xm07kCcJikTV1gB2j1n2/values/Sheet1?key=API_KEY')
+  axios.get('https://sheets.googleapis.com/v4/spreadsheets/1BPHvdHwShwHrS8SBfg5rAJIMGShNWy4V27NlD1D0jWA/values/Sheet1?key=API_KEY')
     .then(function(response) {
       var entries = response.data.values;
       var dashboardContent = '';
