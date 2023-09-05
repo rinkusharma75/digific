@@ -446,7 +446,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         Email*
       </label>
       <div class="_field-wrapper">
-        <input   type="email"  id="email" name="email" placeholder="Type your email"  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-z]{2,9})+$" required />
+        <input  type="email"  id="email" name="email" placeholder="Type your email"  pattern='^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-z]{2,9})+$' required />
       </div>
     </div>
     <div class="_form_element _x76681663 _full_width " >
@@ -1979,13 +1979,13 @@ window._load_script = function(url, callback, isSubmit) {
                 no_error = false;
             }
         }
-        if (no_error &#038;&#038; elem.name == 'email') {
-            if (!value.match(/^[\+_a-z0-9-'&#038;=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
-                elem.className = elem.className + ' _has_error';
-                no_error = false;
-                tooltip = create_tooltip(elem, "Enter a valid email address.");
-            }
-        }
+        // if (no_error &#038;&#038; elem.name == 'email') {
+        //     if (!value.match(/^[\+_a-z0-9-'&#038;=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
+        //         elem.className = elem.className + ' _has_error';
+        //         no_error = false;
+        //         tooltip = create_tooltip(elem, "Enter a valid email address.");
+        //     }
+        // }
         if (no_error &#038;&#038; /date_field/.test(elem.className)) {
             if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
                 elem.className = elem.className + ' _has_error';
@@ -1996,20 +1996,20 @@ window._load_script = function(url, callback, isSubmit) {
         tooltip ? resize_tooltip(tooltip) : false;
         return no_error;
     };
-    var needs_validate = function(el) {
-        if(el.getAttribute('required') !== null){
-            return true
-        }
-        if(el.name === 'email' &#038;&#038; el.value !== ""){
-            return true
-        }
+    // var needs_validate = function(el) {
+    //     if(el.getAttribute('required') !== null){
+    //         return true
+    //     }
+    //     if(el.name === 'email' &#038;&#038; el.value !== ""){
+    //         return true
+    //     }
 
-        if((el.id == 'field[]' || el.id == 'ca[11][v]') &#038;&#038; el.className.includes('phone-input-error')){
-            return true
-        }
+    //     if((el.id == 'field[]' || el.id == 'ca[11][v]') &#038;&#038; el.className.includes('phone-input-error')){
+    //         return true
+    //     }
 
-        return false
-    };
+    //     return false
+    // };
     var validate_form = function(e) {
         var err = form_to_submit.querySelector('._form_error'), no_error = true;
         if (!submitted) {
@@ -2462,14 +2462,7 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 		<script>window.addEventListener('click', function (elem) { var _elem$target, _elem$target$dataset, _window, _window$_trfq; return (elem === null || elem === void 0 ? void 0 : (_elem$target = elem.target) === null || _elem$target === void 0 ? void 0 : (_elem$target$dataset = _elem$target.dataset) === null || _elem$target$dataset === void 0 ? void 0 : _elem$target$dataset.eid) && ((_window = window) === null || _window === void 0 ? void 0 : (_window$_trfq = _window._trfq) === null || _window$_trfq === void 0 ? void 0 : _window$_trfq.push(["cmdLogEvent", "click", elem.target.dataset.eid]));});</script>
 		<script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
 		<script src='https://img1.wsimg.com/traffic-assets/js/tccl-tti.min.js' onload="window.tti.calculateTTI()"></script>
-<script>
-	$('#email').validate({
-    email: {
-        required: true,
-        email: true,
-        regex: ^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-z]{2,9})+$
-    }
-});
-</script>
+
+	
 			</body>
 </html>
