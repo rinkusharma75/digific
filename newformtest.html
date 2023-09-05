@@ -406,7 +406,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
  #_form_7_ .phone-error { color:#e40e49; }
  #_form_7_ .phone-input-error { border:1px solid #e40e49 !important; }
 </style>
-<form method="POST" action="https://comfortcapital.activehosted.com/proc.php" id="_form_7_" class="_form _form_7 _inline-form  _dark" novalidate data-styles-version="3">
+<form method="POST" name="frm" action="https://comfortcapital.activehosted.com/proc.php" id="_form_7_" class="_form _form_7 _inline-form  _dark" novalidate data-styles-version="3">
   <input type="hidden" name="u" value="7" />
   <input type="hidden" name="f" value="7" />
   <input type="hidden" name="s" />
@@ -2462,5 +2462,22 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 		<script>window.addEventListener('click', function (elem) { var _elem$target, _elem$target$dataset, _window, _window$_trfq; return (elem === null || elem === void 0 ? void 0 : (_elem$target = elem.target) === null || _elem$target === void 0 ? void 0 : (_elem$target$dataset = _elem$target.dataset) === null || _elem$target$dataset === void 0 ? void 0 : _elem$target$dataset.eid) && ((_window = window) === null || _window === void 0 ? void 0 : (_window$_trfq = _window._trfq) === null || _window$_trfq === void 0 ? void 0 : _window$_trfq.push(["cmdLogEvent", "click", elem.target.dataset.eid]));});</script>
 		<script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
 		<script src='https://img1.wsimg.com/traffic-assets/js/tccl-tti.min.js' onload="window.tti.calculateTTI()"></script>
+
+	<script type="text/javascript">
+        function validateForm() {
+          var a = document.forms["frm"]["firstname"].value;
+          var b = document.forms["frm"]["answer_b"].value;
+          var c = document.forms["frm"]["answer_c"].value;
+          var d = document.forms["frm"]["answer_d"].value;
+          if (a == null || a == "")  {
+            alert("A Required Fields");
+            return false;
+          }
+          else if (b == null || b == "")
+          {
+            alert("B Required Fields");
+          }
+        }
+      </script>
 		</body>
 </html>
