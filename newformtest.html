@@ -2464,34 +2464,40 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 		<script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
 		<script src='https://img1.wsimg.com/traffic-assets/js/tccl-tti.min.js' onload="window.tti.calculateTTI()"></script>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	
 	 <script>
-		 const validateEmail = (email) => {
+       const validateEmail = (email) => {
         return email.match(
           /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
       };
       
       const validate = () => {
-        const $result = $('#result');
-        const email = $('#email').val();
-        $result.text('');
+        const result = document.getElementById("result");
+        const email = document.getElementById("email").value;
+        result.innerText = '';
       
         if(validateEmail(email)){
-          $result.text(email + ' is valid.');
-          $result.css('color', 'green');
-          $("#_form_7_submit").attr("disabled", false);
+        //   result.innerText = email + ' is valid.';
+        //   result.css('color', 'green');
+         // document.getElementById("button").attr("disabled", false);
+        
+         document.getElementById("result").innerText = email + ' valid ' ;
+         document.getElementById("result").style.color = "green";
+          document.getElementById("button").disabled = false;
         } else{
-          $result.text(email + ' is invalid.');
-          $result.css('color', 'red');
-         
-          $("#_form_7_submit").attr("disabled", true);
+        //   result.innerText = email + ' is invalid.';
+        //   result.css('color', 'red');
+     
+        document.getElementById("result").innerText = email + ' invalid ' ;
+        document.getElementById("result").style.color = "red";
+          document.getElementById("button").disabled = true;
         }
         return false;
       }
       
-      $('#email').on('input', validate);
-	 
-	 </script>
+      document.getElementById("email").addEventListener('input', validate);
+        </script>
 			</body>
 </html>
