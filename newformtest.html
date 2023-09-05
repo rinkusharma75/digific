@@ -2466,17 +2466,24 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 	<script type="text/javascript">
         function validateForm() {
           var a = document.forms["frm"]["firstname"].value;
-          var b = document.forms["frm"]["answer_b"].value;
-          var c = document.forms["frm"]["answer_c"].value;
+          var b = document.forms["frm"]["lastname"].value;
+          var c = document.forms["frm"]["email"].value;
           var d = document.forms["frm"]["answer_d"].value;
           if (a == null || a == "")  {
-            alert("A Required Fields");
+            alert("Required Fields");
             return false;
           }
           else if (b == null || b == "")
           {
-            alert("B Required Fields");
+            alert("Required Fields");
           }
+
+		 else if (c == null || c == "")
+          {
+            alert("Required Fields");
+          }
+
+		
         }
       </script>
 		</body>
