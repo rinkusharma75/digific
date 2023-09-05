@@ -430,7 +430,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         First Name
       </label>
       <div class="_field-wrapper">
-        <input type="text" id="firstname" name="firstname" placeholder="Type your first name" />
+        <input type="text" id="firstname" name="firstname" placeholder="Type your first name" required />
       </div>
     </div>
     <div class="_form_element _x40902895 _full_width " >
@@ -438,7 +438,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         Last Name
       </label>
       <div class="_field-wrapper">
-        <input type="text" id="lastname" name="lastname" placeholder="Type your last name" />
+        <input type="text" id="lastname" name="lastname" placeholder="Type your last name" required />
       </div>
     </div>
     <div class="_form_element _x25207324 _full_width " >
@@ -446,7 +446,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         Email*
       </label>
       <div class="_field-wrapper">
-        <input type="text" id="email" name="email" placeholder="Type your email" required/>
+        <input type="text" id="email" name="email" placeholder="Type your email"  pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-z]{2,9})+$" required />
       </div>
     </div>
     <div class="_form_element _x76681663 _full_width " >
@@ -454,15 +454,15 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         Phone
       </label>
       <div class="_field-wrapper">
-        <input type="text" id="phone" name="phone" placeholder="Type your phone number" />
+        <input type="text" id="phone" name="phone" placeholder="Type your phone number" required />
       </div>
     </div>
     <div class="_form_element _x03297744 _full_width " >
       <label for="field[18]" class="_form-label">
         Interests
       </label>
-      <div class="_field-wrapper">
-        <select name="field[18]" id="field[18]" >
+      <div class="_field-wrapper" >
+        <select name="field[18]" id="field[18]" required >
           <option selected>
           </option>
           <option value="Investing" >
@@ -482,7 +482,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         How can we assist you
       </label>
       <div class="_field-wrapper">
-        <textarea id="field[19]" name="field[19]" placeholder=""  ></textarea>
+        <textarea id="field[19]" name="field[19]" placeholder="" required ></textarea>
       </div>
     </div>
     <div class="_button-wrapper _full_width">
