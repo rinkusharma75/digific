@@ -454,7 +454,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         Phone
       </label>
       <div class="_field-wrapper">
-        <input type="text" id="phone" name="phone" placeholder="Type your phone number" required />
+        <input type="text" id="phone" name="phone" placeholder="Type your phone number" required maxlength="10" onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
       </div>
     </div>
     <div class="_form_element _x03297744 _full_width " >
