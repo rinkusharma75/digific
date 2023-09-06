@@ -455,8 +455,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
         Phone
       </label>
       <div class="_field-wrapper">
-        <input type="text" id="phone" name="phone" placeholder="Type your phone number" required maxlength="10" pattern="[0-9]{10}" title="You can enter only 10 digits..."  onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
-      </div>
+        <input type="text" id="phone" name="phone" placeholder="Type your phone number" required maxlength="10"  onkeyup="check();  onkeypress='return event.charCode >= 48 && event.charCode <= 57' />
+     <p id="message"></p>
+		</div>
     </div>
     <div class="_form_element _x03297744 _full_width " >
       <label for="field[18]" class="_form-label">
@@ -2498,6 +2499,34 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
       }
       
       document.getElementById("email").addEventListener('input', validate);
+
+		 function check()
+{
+
+    var mobile = document.getElementById('mob');
+   
+    
+    var message = document.getElementById('message');
+
+   var goodColor = "green";
+    var badColor = "red";
+  
+    if(mobile.value.length!=10){
+       
+       // mobile.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "No. is invalid. You can enter only 10 digits..."
+        document.getElementById("button").disabled = true;
+    }
+    else
+    {
+       // mobile.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Mobile no is valid"
+        document.getElementById("button").disabled = false;
+    }
+
+  }
         </script>
 			</body>
 </html>
